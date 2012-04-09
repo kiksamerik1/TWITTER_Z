@@ -1,0 +1,20 @@
+%h2 listing zombies
+%table
+	%th
+		%tr name
+		%tr graveyard
+	
+	- @zombies.each do |zombie| 
+		%tr
+			%td= zombie.name 
+			%td= zombie.graveyard
+			%td= link_to 'delete', zombie, :confirm=>"are you sure?" , :method=>:delete 
+			%td= link_to 'edit', edit_zombie_path(zombie)
+	
+	-if @zombies.empty? 
+		%td
+			%em no zombies found!
+			
+	
+%br
+= link_to 'new zombie', new_zombie_path 
