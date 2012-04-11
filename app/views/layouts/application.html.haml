@@ -1,12 +1,16 @@
 !!! 5
 %html
-  %head
-    %title TWITTERZ
-    = stylesheet_link_tag 'application'
-    = javascript_include_tag 'application'
-    = csrf_meta_tags
+	%head
+		%title TWITTERZ
+		= stylesheet_link_tag 'application'
+		= javascript_include_tag 'application'
+		= csrf_meta_tags
 
-  %body
-    %h1 TWITTERZ
-
-    = yield
+	%body
+		#container
+			#topbar
+			#identity
+			#search
+			#navbar
+			= yield
+			.footer

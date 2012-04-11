@@ -10,7 +10,7 @@ class ZombiesController < ApplicationController
 	end
 
 	def show
-		
+		@zombie = Zombie.find params[:id]
 	end
 
 	def new

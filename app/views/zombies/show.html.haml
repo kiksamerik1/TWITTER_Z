@@ -1,1 +1,16 @@
+#main
+	%h2 Details about #{@zombie.name}
+	%ul
+		%li
+			Name :
+			=@zombie.name
+		%li
+			Graveyard :
+			=@zombie.graveyard
+
+	%h3 Description
+	%p=@zombie.description
+	=link_to 'edit', edit_zombie_path(@zombie)
+	=button_to 'delete', @zombie, :confirm=>"are you sure?" , :method=>:delete
+	=link_to 'back to zombies list', zombies_path 
 

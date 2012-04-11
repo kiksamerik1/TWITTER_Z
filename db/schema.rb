@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(:version => 1) do
   create_table "zombies", :force => true do |t|
     t.string "name"
     t.string "graveyard"
+    t.string "description"
   end
 
 end

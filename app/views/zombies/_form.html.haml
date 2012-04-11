@@ -1,8 +1,13 @@
 = form_for @zombie do |f|
-	=f.label :name
-	=f.text_field :name
-	
-	=f.label :graveyard
-	=f.text_field :graveyard
+	%table
+		%tr
+			%td=f.label :name
+			%td=f.text_field :name
+		%tr
+			%td=f.label :graveyard
+			%td=f.text_field :graveyard
+		%tr
+			%td=f.label :description
+			%td=f.text_area :description, :cols=>24, :rows=>5
 	
 	=f.submit 'save'	
