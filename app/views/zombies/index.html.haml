@@ -1,21 +1,20 @@
-#main
-	%h1 All Zombies
-	%table#zombies
-		%thead
+%h1 All Zombies
+%table#zombies
+	%thead
+		%tr
+			%th Name
+			%th Graveyard
+			%th More Info
+	%tbody		
+		- @zombies.each do |zombie| 
 			%tr
-				%th Name
-				%th Graveyard
-				%th More Info
-		%tbody		
-			- @zombies.each do |zombie| 
-				%tr
-					%td= zombie.name 
-					%td= zombie.graveyard
-					%td= link_to "More about #{zombie.name}", zombie_path(zombie)
+				%td= zombie.name 
+				%td= zombie.graveyard
+				%td= link_to "More about #{zombie.name}", zombie_path(zombie)
 
 
-			-if @zombies.empty? 
-				%td
-					%em no zombies found!			
-	%br
-	= link_to 'new zombie', new_zombie_path 
+		-if @zombies.empty? 
+			%td
+				%em no zombies found!			
+%br
+= link_to 'new zombie', new_zombie_path 

@@ -10,7 +10,13 @@
 		#container
 			#topbar
 			#identity
+				- if flash[:notice]
+					= flash[:notice]
+				- elsif flash[:warning]
+					= flash[:warning] 
 			#search
 			#navbar
-			= yield
+			#main
+				= yield
+
 			.footer
